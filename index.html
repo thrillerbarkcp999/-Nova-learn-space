@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nova Learn Space | The Yellow Official Station</title>
+<meta name="description" content="อาคารพาณิชย์ให้เช่า ทำเลทองฝั่งธนฯ ย่านกาญจนาภิเษก-ปิ่นเกล้า พื้นที่ 450-900 ตร.ม. ราคาเริ่ม 90,000 บาท/เดือน">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#C9A84C;--gold-light:#F0D080;--gold-pale:#FDF8EC;
+  --navy:#0D1B2A;--navy2:#162435;--white:#fff;
+  --gray:#F7F5F0;--text:#1A1A2E;--muted:#6B6560;
+  --yellow:#F5C518;--yellow-dark:#D4A017;
+}
+body{font-family:'Sarabun',sans-serif;color:var(--text);background:var(--white);line-height:1.7}
+.serif{font-family:'Playfair Display',serif}
+html{scroll-behavior:smooth}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.98);border-bottom:3px solid var(--yellow);padding:0 5%;display:flex;justify-content:space-between;align-items:center;height:66px;box-shadow:0 2px 20px rgba(0,0,0,0.1)}
+.logo-wrap{display:flex;align-items:center;gap:12px}
+.logo-img{height:44px;width:auto;object-fit:contain}
+.logo-text{display:flex;flex-direction:column;line-height:1.1}
+.logo-main{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--navy);letter-spacing:1px}
+.logo-main span{color:var(--yellow-dark)}
+.logo-sub{font-size:7.5px;letter-spacing:2.5px;color:var(--gold);font-weight:600}
+.nav-links{display:flex;gap:22px;list-style:none}
+.nav-links a{text-decoration:none;font-size:13px;font-weight:500;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--yellow-dark)}
+.nav-cta{background:var(--yellow);color:var(--navy);border:none;padding:9px 20px;font-family:'Sarabun',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:.2s}
+.nav-cta:hover{background:var(--yellow-dark)}
+
+/* HERO */
+.hero{min-height:92vh;position:relative;overflow:hidden;display:flex;align-items:center}
+.hero-bg-img{position:absolute;inset:0;background:url('https://i.ibb.co/x8zv1pzj') center/cover no-repeat;filter:brightness(.35)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,27,42,.92) 55%,rgba(13,27,42,.3) 100%)}
+.hero-yellow-stripe{position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--yellow)}
+.hero-content{position:relative;z-index:2;padding:80px 5%;max-width:640px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(245,197,24,.4);color:var(--gold-light);font-size:10px;letter-spacing:3px;padding:6px 18px;margin-bottom:22px;font-weight:600}
+.hero h1{font-family:'Playfair Display',serif;font-size:48px;font-weight:700;color:#fff;line-height:1.15;margin-bottom:10px}
+.hero h1 em{color:var(--yellow);font-style:normal}
+.hero-name2{font-size:11px;letter-spacing:3px;color:rgba(255,255,255,.3);margin-bottom:22px}
+.hero-price-box{display:inline-flex;align-items:center;gap:16px;background:rgba(245,197,24,.12);border:1px solid rgba(245,197,24,.4);padding:14px 22px;margin-bottom:26px;flex-wrap:wrap}
+.hero-price-item{}
+.hero-price-label{font-size:10px;color:#9A8E7A;letter-spacing:1px}
+.hero-price-val{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--yellow);line-height:1}
+.hero-price-unit{font-size:11px;color:#9A8E7A}
+.divider-v{width:1px;height:44px;background:rgba(245,197,24,.3)}
+.hero-desc{font-size:15px;color:#BDB09A;font-weight:300;line-height:1.85;margin-bottom:32px;max-width:520px}
+.hero-stats{display:flex;gap:0;margin-bottom:36px;border:1px solid rgba(245,197,24,.2);max-width:480px}
+.stat{text-align:center;padding:14px 20px;border-right:1px solid rgba(245,197,24,.2);flex:1}
+.stat:last-child{border-right:none}
+.stat-num{font-family:'Playfair Display',serif;font-size:26px;color:var(--yellow);font-weight:700;line-height:1}
+.stat-label{font-size:10px;color:#7A6E5E;letter-spacing:.5px;margin-top:3px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-yellow{background:var(--yellow);color:var(--navy);padding:13px 30px;font-size:14px;font-weight:700;border:none;cursor:pointer;font-family:'Sarabun',sans-serif;transition:.2s}
+.btn-yellow:hover{background:var(--yellow-dark)}
+.btn-ghost{background:transparent;color:var(--gold-light);padding:13px 30px;font-size:14px;border:1px solid rgba(245,197,24,.4);cursor:pointer;font-family:'Sarabun',sans-serif;transition:.2s}
+.btn-ghost:hover{border-color:var(--yellow);color:var(--yellow)}
+
+/* URGENT */
+.urgent{background:var(--yellow);padding:12px 5%;display:flex;justify-content:center;align-items:center;gap:10px}
+.urgent-dot{width:8px;height:8px;background:var(--navy);border-radius:50%;animation:blink 1.2s infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.urgent-text{font-size:13px;font-weight:700;color:var(--navy);letter-spacing:.5px;text-align:center}
+
+/* HOURS BAR */
+.hours-bar{background:var(--navy);padding:16px 5%;display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+.hours-item{display:flex;align-items:center;gap:10px}
+.hours-icon{font-size:15px}
+.hours-label{font-size:10px;letter-spacing:1.5px;color:var(--yellow);font-weight:700}
+.hours-val{font-size:13px;color:#D4C9B0;margin-top:1px}
+
+/* FEATURE STRIP */
+.features-strip{background:var(--yellow);padding:22px 5%}
+.features-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-around;flex-wrap:wrap;gap:16px}
+.feat-item{display:flex;align-items:center;gap:8px}
+.feat-icon{font-size:18px}
+.feat-text{font-size:13px;font-weight:700;color:var(--navy)}
+
+/* SECTION */
+section{padding:80px 5%}
+.sec-tag{font-size:10px;letter-spacing:3px;color:var(--yellow-dark);font-weight:700;margin-bottom:10px}
+.sec-title{font-family:'Playfair Display',serif;font-size:34px;font-weight:700;color:var(--text);line-height:1.25;margin-bottom:14px}
+.sec-sub{font-size:15px;color:var(--muted);line-height:1.85;max-width:580px}
+.c{text-align:center}.c .sec-sub{margin:0 auto}
+
+/* HERO PHOTO STRIP - 4 รูปหลัก */
+.photo-strip{background:var(--navy);padding:0}
+.strip-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:300px 260px;gap:3px}
+.strip-cell{overflow:hidden;position:relative;background:#1A2835}
+.strip-cell img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.strip-cell:hover img{transform:scale(1.04)}
+.strip-cell.main{grid-row:span 2}
+.strip-label{position:absolute;bottom:0;left:0;right:0;padding:10px 14px;background:linear-gradient(transparent,rgba(0,0,0,.75));z-index:2}
+.strip-label-text{font-size:11px;color:rgba(255,255,255,.9);letter-spacing:.5px;font-weight:500}
+.strip-badge{position:absolute;top:10px;left:10px;background:var(--yellow);color:var(--navy);font-size:8px;font-weight:700;letter-spacing:1px;padding:3px 10px;z-index:3}
+
+/* GALLERY SECTION */
+.gallery{background:var(--navy2);padding:80px 5%}
+.gallery-inner{max-width:1200px;margin:0 auto}
+.gallery .sec-title{color:#fff}
+.gallery .sec-sub{color:#9A8E7A;margin-bottom:36px}
+
+/* Gallery Grid */
+.gal-main{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-bottom:4px}
+.gal-row2{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-bottom:4px}
+.gal-row3{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin-bottom:4px}
+.gal-row4{display:grid;grid-template-columns:repeat(5,1fr);gap:4px}
+
+.gal-cell{overflow:hidden;position:relative;background:#0D1B2A;cursor:pointer}
+.gal-cell img{width:100%;height:160px;object-fit:cover;display:block;transition:transform .4s}
+.gal-cell:hover img{transform:scale(1.06)}
+.gal-cell.tall img{height:324px}
+.gal-overlay{position:absolute;inset:0;background:rgba(0,0,0,.0);transition:.3s;display:flex;align-items:flex-end}
+.gal-cell:hover .gal-overlay{background:rgba(13,27,42,.5)}
+.gal-cap{padding:8px 10px;font-size:10px;color:rgba(255,255,255,0);transition:.3s;letter-spacing:.3px;line-height:1.4}
+.gal-cell:hover .gal-cap{color:rgba(255,255,255,.9)}
+
+/* LIGHTBOX */
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:9999;align-items:center;justify-content:center;flex-direction:column}
+.lightbox.open{display:flex}
+.lb-img{max-width:90vw;max-height:80vh;object-fit:contain;border:2px solid var(--yellow)}
+.lb-close{position:absolute;top:16px;right:20px;background:var(--yellow);color:var(--navy);border:none;width:38px;height:38px;font-size:20px;cursor:pointer;font-weight:700;font-family:sans-serif}
+.lb-caption{margin-top:14px;font-size:12px;color:rgba(245,197,24,.8);letter-spacing:1px;text-align:center;max-width:600px;padding:0 20px}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(245,197,24,.15);color:var(--yellow);border:1px solid rgba(245,197,24,.3);width:44px;height:44px;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s}
+.lb-nav:hover{background:var(--yellow);color:var(--navy)}
+.lb-prev{left:16px}
+.lb-next{right:16px}
+
+/* ABOUT */
+.about{background:var(--gray)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;max-width:1100px;margin:0 auto;align-items:start}
+.kpi-row{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:28px}
+.kpi{padding:16px;border-top:3px solid var(--yellow);background:#fff}
+.kpi-num{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--text)}
+.kpi-label{font-size:12px;color:var(--muted);margin-top:2px}
+.map-card{background:var(--navy2);overflow:hidden}
+.map-card-head{background:var(--yellow);padding:12px 18px}
+.map-card-head p{font-size:9px;font-weight:700;color:var(--navy);letter-spacing:2px}
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(245,197,24,.08)}
+.loc-item{background:var(--navy2);padding:14px;transition:.2s}
+.loc-item:hover{background:#1E2D3E}
+.loc-icon{font-size:16px;margin-bottom:5px}
+.loc-title{font-size:11px;color:var(--gold-light);font-weight:600;margin-bottom:2px}
+.loc-desc{font-size:10px;color:#6A5E4E;line-height:1.5}
+.loc-highlight{background:var(--yellow);padding:14px 18px;display:flex;align-items:center;gap:12px}
+.lh-num{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--navy)}
+.lh-text{font-size:13px;font-weight:700;color:var(--navy)}
+.lh-sub{font-size:10px;color:#6A5A2A;margin-top:1px}
+
+/* TYPES */
+.types{background:#fff}
+.types-inner{max-width:1000px;margin:0 auto}
+.types-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
+.type-card{border:1px solid #E0D8C8;padding:34px;position:relative;transition:.3s}
+.type-card:hover{border-color:var(--yellow);box-shadow:0 6px 24px rgba(212,160,23,.15)}
+.type-card.hot{border:2px solid var(--yellow);background:#FFFDF0}
+.type-tag{position:absolute;top:-1px;right:24px;background:var(--yellow);color:var(--navy);font-size:9px;font-weight:700;letter-spacing:2px;padding:4px 12px}
+.type-label{font-size:9px;letter-spacing:3px;color:var(--yellow-dark);font-weight:700;margin-bottom:6px}
+.type-name{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--text);margin-bottom:12px}
+.type-area-big{font-size:44px;font-weight:700;color:var(--text);line-height:1}
+.type-area-big span{font-size:15px;font-weight:400;color:var(--muted)}
+.type-floor{font-size:13px;color:var(--muted);margin:5px 0 20px}
+.type-list{list-style:none;border-top:1px solid #E0D8C8;padding-top:16px}
+.type-list li{font-size:13px;color:var(--muted);padding:4px 0;display:flex;gap:8px}
+.type-list li::before{content:"";display:inline-block;width:12px;height:1px;background:var(--yellow);margin-top:11px;flex-shrink:0}
+.type-cta{display:block;width:100%;background:var(--navy);color:#fff;border:none;padding:11px;font-family:'Sarabun',sans-serif;font-size:13px;font-weight:600;cursor:pointer;margin-top:20px;transition:.2s;text-align:center;text-decoration:none}
+.type-cta:hover{background:var(--yellow);color:var(--navy)}
+.price-note{text-align:center;padding:16px;background:var(--yellow);max-width:600px;margin:24px auto 0}
+.price-note p{font-size:14px;font-weight:700;color:var(--navy)}
+.price-note span{font-family:'Playfair Display',serif;font-size:22px}
+
+/* TYPE PHOTOS */
+.type-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:40px}
+.type-photo-cell{overflow:hidden;position:relative}
+.type-photo-cell img{width:100%;height:160px;object-fit:cover;display:block;transition:transform .4s;cursor:pointer}
+.type-photo-cell:hover img{transform:scale(1.05)}
+.type-photo-label{position:absolute;bottom:0;left:0;right:0;padding:8px 10px;background:linear-gradient(transparent,rgba(0,0,0,.7));font-size:10px;color:rgba(255,255,255,.9);letter-spacing:.3px}
+
+/* LIFESTYLE */
+.lifestyle{background:var(--navy)}
+.lifestyle-inner{max-width:1100px;margin:0 auto}
+.lifestyle .sec-title{color:#fff}
+.lifestyle .sec-sub{color:#9A8E7A}
+.life-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:48px}
+.life-item{background:rgba(255,255,255,.03);padding:26px 20px;border-top:2px solid transparent;transition:.3s}
+.life-item:hover{border-top-color:var(--yellow);background:rgba(245,197,24,.06)}
+.life-icon{width:42px;height:42px;border:1px solid rgba(245,197,24,.3);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:17px}
+.life-title{font-size:13px;font-weight:700;color:var(--gold-light);margin-bottom:5px}
+.life-desc{font-size:12px;color:#6A5E4E;line-height:1.7}
+
+/* 7 TARGETS */
+.community{background:#fff}
+.community-inner{max-width:1140px;margin:0 auto}
+.biz-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.biz-card{background:var(--gray);padding:26px;border-bottom:3px solid transparent;transition:.3s;position:relative}
+.biz-card:hover{border-bottom-color:var(--yellow);transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.biz-num{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#E0D8C8;line-height:1;margin-bottom:8px}
+.biz-type{font-size:9px;letter-spacing:2.5px;color:var(--yellow-dark);font-weight:700;margin-bottom:5px}
+.biz-title{font-size:15px;font-weight:700;color:var(--text);margin-bottom:8px}
+.biz-desc{font-size:12px;color:var(--muted);line-height:1.7}
+.biz-badge{position:absolute;top:18px;right:18px;background:var(--yellow);color:var(--navy);font-size:8px;font-weight:700;letter-spacing:1px;padding:3px 9px}
+
+/* CONTACT */
+.contact{background:var(--navy)}
+.contact-inner{max-width:980px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.contact .sec-title{color:#fff}
+.contact .sec-sub{color:#9A8E7A}
+.c-details{margin-top:24px}
+.c-item{display:flex;align-items:flex-start;gap:12px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.c-icon{width:38px;height:38px;background:rgba(245,197,24,.1);border:1px solid rgba(245,197,24,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
+.c-label{font-size:10px;letter-spacing:1.5px;color:var(--yellow);margin-bottom:2px;font-weight:700}
+.c-val{font-size:14px;color:#D4C9B0}
+.c-val a{color:var(--gold-light);text-decoration:none}
+.form-box{background:rgba(255,255,255,.04);border:1px solid rgba(245,197,24,.15);padding:30px}
+.form-box h3{font-family:'Playfair Display',serif;font-size:19px;color:#fff;margin-bottom:20px}
+.fg{margin-bottom:13px}
+.fg label{display:block;font-size:10px;letter-spacing:1.5px;color:var(--yellow);margin-bottom:4px;font-weight:700}
+.fg input,.fg select,.fg textarea{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(245,197,24,.2);color:#fff;padding:9px 12px;font-family:'Sarabun',sans-serif;font-size:14px;outline:none;transition:.2s}
+.fg input::placeholder{color:#6A5E4E}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--yellow)}
+.fg select option{background:var(--navy2);color:#fff}
+.fg textarea{height:65px;resize:none}
+.fg textarea::placeholder{color:#6A5E4E}
+.form-submit{width:100%;background:var(--yellow);color:var(--navy);border:none;padding:13px;font-family:'Sarabun',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:.2s;margin-top:6px}
+.form-submit:hover{background:var(--gold-light)}
+.form-note{font-size:11px;color:#4A4030;text-align:center;margin-top:8px}
+
+/* FOOTER */
+footer{background:#0A1520;padding:22px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;border-top:3px solid var(--yellow)}
+.footer-logo{font-family:'Playfair Display',serif;font-size:16px;color:#fff;letter-spacing:1.5px}
+.footer-logo span{color:var(--yellow)}
+.footer-sub{font-size:8px;letter-spacing:2px;color:#4A4030;display:block;margin-top:2px}
+.footer-info{font-size:11px;color:#4A4030;text-align:right;line-height:1.6}
+
+/* FLOAT BUTTONS */
+.float-btns{position:fixed;bottom:24px;right:20px;display:flex;flex-direction:column;gap:10px;z-index:999}
+.float-btn{width:52px;height:52px;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 4px 16px rgba(0,0,0,.35);transition:.2s;text-decoration:none}
+.float-btn:hover{transform:scale(1.12)}
+.float-phone{background:#25D366}
+.float-line{background:#06C755}
+
+/* VIDEO PLACEHOLDER */
+.video-section{background:var(--gray);padding:60px 5%;text-align:center}
+.video-box{max-width:700px;margin:32px auto 0;background:var(--navy2);border:2px dashed rgba(245,197,24,.3);padding:60px 40px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.video-icon{font-size:48px;opacity:.5}
+.video-text{font-size:14px;color:#9A8E7A}
+.video-badge{background:var(--yellow);color:var(--navy);font-size:11px;font-weight:700;padding:5px 16px;letter-spacing:1px;margin-top:4px}
+
+@media(max-width:900px){
+  .about-grid,.types-grid,.contact-inner{grid-template-columns:1fr}
+  .life-grid{grid-template-columns:repeat(2,1fr)}
+  .biz-grid{grid-template-columns:repeat(2,1fr)}
+  .gal-main,.gal-row2,.gal-row3,.gal-row4{grid-template-columns:repeat(2,1fr)}
+  .strip-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .strip-cell.main{grid-row:span 1}
+  nav .nav-links{display:none}
+  .hero h1{font-size:34px}
+  .hero-stats{flex-direction:column;border:none}
+  .stat{border-right:none;border-bottom:1px solid rgba(245,197,24,.2)}
+  .type-photos{grid-template-columns:repeat(2,1fr)}
+  .features-inner{gap:12px;justify-content:flex-start}
+}
+@media(max-width:480px){
+  .life-grid,.biz-grid,.gal-main,.gal-row2,.gal-row3,.gal-row4{grid-template-columns:1fr}
+  .hero h1{font-size:28px}
+  section{padding:56px 5%}
+  .type-photos{grid-template-columns:1fr}
+  .strip-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLB(event)">
+  <button class="lb-close" onclick="closeLightbox()">✕</button>
+  <button class="lb-nav lb-prev" onclick="lbNav(-1)">‹</button>
+  <img class="lb-img" id="lb-img" src="" alt="">
+  <button class="lb-nav lb-next" onclick="lbNav(1)">›</button>
+  <div class="lb-caption" id="lb-caption"></div>
+</div>
+
+<!-- FLOAT BUTTONS -->
+<div class="float-btns">
+  <a href="tel:0846988881" class="float-btn float-phone" title="โทรหาเรา">📞</a>
+  <a href="https://line.me/R/ti/p/@810ibeb" target="_blank" class="float-btn float-line" title="LINE @810ibeb">💬</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo-wrap">
+    <img class="logo-img" src="https://i.ibb.co/Zp8yZ2kX" alt="Nova Learn Space Logo" onerror="this.style.display='none'">
+    <div class="logo-text">
+      <div class="logo-main">NOVA <span>LEARN</span> SPACE</div>
+      <div class="logo-sub">THE YELLOW OFFICIAL STATION</div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#gallery">รูปภาพ</a></li>
+    <li><a href="#about">ทำเล</a></li>
+    <li><a href="#types">พื้นที่</a></li>
+    <li><a href="#community">กลุ่มธุรกิจ</a></li>
+    <li><a href="#contact">ติดต่อ</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">นัดชมพื้นที่</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-img"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-yellow-stripe"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">COMMERCIAL SPACE · THONBURI · KANCHANAPHISEK-PINKLAO</div>
+    <h1 class="serif">อาคารพาณิชย์<br><em>ทำเลทอง</em><br>ฝั่งธนฯ</h1>
+    <p class="hero-name2">THE YELLOW OFFICIAL STATION · NOVA LEARN SPACE</p>
+    <div class="hero-price-box">
+      <div class="hero-price-item">
+        <div class="hero-price-label">ราคาเริ่มต้น</div>
+        <div style="display:flex;align-items:baseline;gap:5px">
+          <div class="hero-price-val">90,000</div>
+          <div class="hero-price-unit">บ./เดือน</div>
+        </div>
+      </div>
+      <div class="divider-v"></div>
+      <div class="hero-price-item">
+        <div class="hero-price-label">พื้นที่</div>
+        <div style="display:flex;align-items:baseline;gap:4px">
+          <div class="hero-price-val" style="font-size:22px">450–900</div>
+          <div class="hero-price-unit">ตร.ม.</div>
+        </div>
+      </div>
+    </div>
+    <p class="hero-desc">อาคาร 3 ชั้น ผนังกระจกสูงโปร่งแสง สีเหลืองโดดเด่น ที่จอดรถมีหลังคาขนาดใหญ่กว่า 100 คัน พื้นกระเบื้องแกรนิตภายใน ติดถนนปิ่นเกล้า-กาญจนาภิเษก ใกล้ถนนพระเทพตัดใหม่</p>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">900</div><div class="stat-label">ตร.ม. สูงสุด</div></div>
+      <div class="stat"><div class="stat-num">100+</div><div class="stat-label">ที่จอดรถ</div></div>
+      <div class="stat"><div class="stat-num">3</div><div class="stat-label">ชั้น</div></div>
+      <div class="stat"><div class="stat-num">2</div><div class="stat-label">ยูนิตเหลือ</div></div>
+    </div>
+    <div class="hero-btns">
+      <button class="btn-yellow" onclick="document.getElementById('strip-photos').scrollIntoView({behavior:'smooth'})">ดูรูปภาพจริง</button>
+      <button class="btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">นัดชมสถานที่</button>
+    </div>
+  </div>
+</section>
+
+<!-- URGENT -->
+<div class="urgent">
+  <div class="urgent-dot"></div>
+  <div class="urgent-text">⚡ เหลือเพียง 2 ยูนิตสุดท้าย · ราคาเริ่ม 90,000 บ./เดือน · โทร 084-6988881 คุณนกยูง</div>
+</div>
+
+<!-- HOURS -->
+<div class="hours-bar">
+  <div class="hours-item"><div class="hours-icon">📅</div><div><div class="hours-label">จันทร์ – ศุกร์</div><div class="hours-val">08:00 – 17:00 น.</div></div></div>
+  <div class="hours-item"><div class="hours-icon">🌅</div><div><div class="hours-label">เสาร์ – อาทิตย์</div><div class="hours-val">10:00 – 17:00 น.</div></div></div>
+  <div class="hours-item"><div class="hours-icon">📞</div><div><div class="hours-label">ติดต่อคุณนกยูง</div><div class="hours-val">084-6988881</div></div></div>
+  <div class="hours-item"><div class="hours-icon">💬</div><div><div class="hours-label">LINE OFFICIAL</div><div class="hours-val">@810ibeb</div></div></div>
+</div>
+
+<!-- FEATURE STRIP -->
+<div class="features-strip">
+  <div class="features-inner">
+    <div class="feat-item"><div class="feat-icon">🏢</div><div class="feat-text">อาคาร 3 ชั้น กระจกสูง</div></div>
+    <div class="feat-item"><div class="feat-icon">🅿️</div><div class="feat-text">ที่จอดรถ 100+ คัน</div></div>
+    <div class="feat-item"><div class="feat-icon">🔒</div><div class="feat-text">รปภ. + กล้อง 24 ชม.</div></div>
+    <div class="feat-item"><div class="feat-icon">⚡</div><div class="feat-text">ไฟฟ้า-ประปา-อินเทอร์เน็ต</div></div>
+    <div class="feat-item"><div class="feat-icon">🛣️</div><div class="feat-text">ติดถนนปิ่นเกล้า-กาญจนาฯ</div></div>
+    <div class="feat-item"><div class="feat-icon">🏨</div><div class="feat-text">พื้น Granite ทุกชั้น</div></div>
+  </div>
+</div>
+
+<!-- PHOTO STRIP (รูปหลักหน้าเว็บ) -->
+<div id="strip-photos" class="photo-strip">
+  <div class="strip-grid">
+    <!-- รูปหลัก: หน้าปก -->
+    <div class="strip-cell main" onclick="openLB('https://i.ibb.co/x8zv1pzj','ภาพรวมโครงการ Nova Learn Space')">
+      <img src="https://i.ibb.co/x8zv1pzj" alt="Nova Learn Space หน้าปก">
+      <div class="strip-badge">MAIN VIEW</div>
+      <div class="strip-label"><div class="strip-label-text">ภาพรวมโครงการ — Nova Learn Space</div></div>
+    </div>
+    <!-- รูปที่จอดรถหน้า -->
+    <div class="strip-cell" onclick="openLB('https://i.ibb.co/WW1MHzSv','ที่จอดรถถนนด้านหน้า')">
+      <img src="https://i.ibb.co/WW1MHzSv" alt="ที่จอดรถด้านหน้า">
+      <div class="strip-label"><div class="strip-label-text">ที่จอดรถด้านหน้า</div></div>
+    </div>
+    <!-- โรงจอดรถด้านขวา -->
+    <div class="strip-cell" onclick="openLB('https://i.ibb.co/tM6XX1HN','โรงจอดรถด้านขวามือ')">
+      <img src="https://i.ibb.co/tM6XX1HN" alt="โรงจอดรถด้านขวา">
+      <div class="strip-label"><div class="strip-label-text">โรงจอดรถด้านขวา</div></div>
+    </div>
+    <!-- โรงจอดรถด้านซ้าย -->
+    <div class="strip-cell" onclick="openLB('https://i.ibb.co/NnLFsNy3','โรงจอดรถด้านซ้าย')">
+      <img src="https://i.ibb.co/NnLFsNy3" alt="โรงจอดรถด้านซ้าย">
+      <div class="strip-label"><div class="strip-label-text">โรงจอดรถด้านซ้าย</div></div>
+    </div>
+    <!-- ด้านหน้าอาคาร Type B -->
+    <div class="strip-cell" onclick="openLB('https://i.ibb.co/vCjhZCVk','อาคาร Type B หลังสุดท้าย')">
+      <img src="https://i.ibb.co/vCjhZCVk" alt="อาคาร Type B">
+      <div class="strip-badge" style="background:var(--navy);color:var(--yellow)">TYPE B</div>
+      <div class="strip-label"><div class="strip-label-text">อาคาร Type B — หลังสุดท้าย</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- GALLERY (รูปรอง) -->
+<section class="gallery" id="gallery">
+  <div class="gallery-inner">
+    <div class="sec-tag">PHOTO GALLERY</div>
+    <h2 class="sec-title serif">ชมพื้นที่จริง<br><span style="color:var(--yellow)">รอบด้านทุกมุม</span></h2>
+    <p class="sec-sub">ภาพถ่ายจริงจากโครงการ ทั้งภายนอก ภายใน บันได ที่จอดรถ และทุกรายละเอียดของพื้นที่</p>
+
+    <!-- ROW 1 -->
+    <div class="gal-main">
+      <div class="gal-cell" onclick="openLB('https://i.ibb.co/TM0G5crx','โรงจอดรถด้านซ้าย-02')">
+        <img src="https://i.ibb.co/TM0G5crx" alt="โรงจอดรถ"><div class="gal-overlay"><div class="gal-cap">โรงจอดรถด้านซ้าย</div></div>
+      </div>
+      <div class="gal-cell" onclick="openLB('https://i.ibb.co/whs7xtMq','โรงจอดรถด้านขวา-02')">
+        <img src="https://i.ibb.co/whs7xtMq" alt="โรงจอดรถ"><div class="gal-overlay"><div class="gal-cap">โรงจอดรถด้านขวา</div></div>
+      </div>
+      <div class="gal-cell" onclick="openLB('https://i.ibb.co/b4wDzhj','มุมเฉียงด้านหน้าอาคาร Type B')">
+        <img src="https://i.ibb.co/b4wDzhj" alt="อาคาร"><div class="gal-overlay"><div class="gal-cap">มุมเฉียงด้านหน้า Type B</div></div>
+      </div>
+      <div class="gal-cell" onclick="openLB('https://i.ibb.co/7tPjbkVR','ด้านซ้ายมุมเฉียง Type B')">
+        <img src="https://i.ibb.co/7tPjbkVR" alt="อาคาร"><div class="gal-overlay"><div class="gal-cap">มุมซ้ายเฉียง Type B</div></div>
+      </div>
+    </div>
+
+    <!-- ROW 2 -->
+    <div class="gal-row2" style="margin-bottom:4px">
+      <div class="gal-cell" onclick="openLB('https://i.ibb.co/dnbFnF4','รั้วด้านข้าง ออกได้ 2 ฝั่งถนน')">
+        <img src="https://i.ibb.co/dnbFnF4" alt="รั้ว"><div class="gal-overlay"><div class="gal-cap">รั้วด้านข้าง — ออกได้ 2 ฝั่งถนน</div></div>
+      </div>
+      <div class="gal-cell" onclick="openLB('https://i.ibb.co/391VnHvw','ความสะอาดออฟฟิต Type A ด้านหน้า')">
+        <img src="https://i.ibb.co/391VnHvw" alt="ด้านหน้า Type A"><div class="gal-overlay"><div class="gal-cap">Type A — ด้านหน้าสะอาด</div></div>
+      </div>
+      <div class="gal-cell" onclick="openLB('https://i.ibb.co/PZxQfmV6','ความเรียบร้อยพื้นที่ตรงข้าม')">
+        <img src="https://i.ibb.co/PZxQfmV6" alt="พื้นที่"><div class="gal-overlay"><div class="gal-cap">พื้นที่ตรงข้ามหลังสุดท้าย</div></div>
+      </div>
+      <div class="gal-cell" onclick="openLB('https://i.ibb.co/W4074ZCb','ด้านหน้าอาคาร Type A ปัจจุบัน')">
+        <img src="https://i.ibb.co/W4074ZCb" alt="Type A"><div class="gal-overlay"><div class="gal-cap">Type A — ปัจจุบัน</div></div>
+      </div>
+    </div>
+
+    <!-- ROW 3: ภายใน Type A -->
+    <div style="padding:10px 0 4px;font-size:10px;letter-spacing:2px;color:var(--yellow);font-weight:700">INTERIOR · TYPE A</div>
+    <div class="gal-row3">
+      <div class="gal-cell" onclick="openLB('https://i.ibb.co/m5ShYDFL','ความสูง Floor to Ceiling 5-6 เมตร')">
+        <img src="https://i.ibb.co/m5ShYDFL" alt="ความสูง"><div class="gal-overlay"><div class="gal-cap">สูง 5-6 ม. Floor to Ceiling</div></div>
+      </div>
+      <div class="gal-cell" onclick="openLB('https://i.ibb.co/bM5tDhJK','โซนรับรองแขกภายใน Type A')">
+        <img src="https://i.ibb.co/bM5tDhJK" alt="โซนรับรอง"><div class="gal-overlay"><div class="gal-cap">โซนรับรองแขก</div></div>
+      </div>
+      <div class="gal-cell" onclick="openLB('https://i.ibb.co/7JymRwny','โซนด้านข้าง Type A พื้นที่กว้าง')">
+        <img src="https://i.ibb.co/7JymRwny" alt="โซนด้านข้าง"><div class="gal-overlay"><div class="gal-cap">โซนด้านข้าง — เหลือเยอะมาก</div></div>
+      </div>
+      <div class="gal-cell" onclick="openLB('https://i.ibb.co/Kc6wcDLz','โถงด้านหลัง Type A ประตูด้านหลัง')">
+        <img src="https://i.ibb.co/Kc6wcDLz" alt="โถงหลัง"><div class="gal-overlay"><div class="gal-cap">โถงหลัง — เชื่อมประตูด้านหลัง</div></div>
+      </div>
+      <div class="gal-cell" onclick="openLB('https://i.ibb.co/pj3Q3DRt','อีกมุมโถงด้านหลัง Type A')">
+        <img src="https://i.ibb.co/pj3Q3DRt" alt="โถง"><div class="gal-overlay"><div class="gal-cap">โถงด้านหลัง Type A</div></div>
+      </div>
+    </div>
+
+    <div class="gal-row3" style="margin-top:4px">
+      <div class="gal-cell" onclick="openLB('https://i.ibb.co/G3QcTMvx','มองเห็นถนนใหญ่ พื้นแกรนิต Type A')">
+        <img src="https://i.ibb.co/G3QcTMvx" alt="มองเห็นถนน"><div class="gal-overlay"><div class="gal-cap">มองเห็นถนนใหญ่ — พื้นแกรนิต</div></div>
+      </div>
+      <div class="gal-cell" onclick="openLB('https://i.ibb.co/MW1JDFq','มุมมองถนนรถวิ่งไปมา Type A')">
+        <img src="https://i.ibb.co/MW1JDFq" alt="มองถนน"><div class="gal-overlay"><div class="gal-cap">วิวถนน — พื้นปูแกรนิต</div></div>
+      </div>
+      <div class="gal-cell" onclick="openLB('https://i.ibb.co/xSXY9jbN','ห้องชั้น 2 ด้านใน Type A')">
+        <img src="https://i.ibb.co/xSXY9jbN" alt="ชั้น 2"><div class="gal-overlay"><div class="gal-cap">ห้องชั้น 2 ด้านใน</div></div>
+      </div>
+      <div class="gal-cell" onclick="openLB('https://i.ibb.co/k2GRQzCv','โถงด้านหน้าชั้น 2 Type A')">
+        <img src="https://i.ibb.co/k2GRQzCv" alt="ชั้น 2 โถง"><div class="gal-overlay"><div class="gal-cap">โถงหน้าชั้น 2</div></div>
+      </div>
+      <div class="gal-cell" onclick="openLB('https://i.ibb.co/TDhSS57g','โถงชั้น 2 ส่วนด้านหน้า Type A')">
+        <img src="https://i.ibb.co/TDhSS57g" alt="ชั้น 2"><div class="gal-overlay"><div class="gal-cap">โถงชั้น 2 ส่วนหน้า</div></div>
+      </div>
+    </div>
+
+    <!-- ROW 4: บันได + ชั้น 3 + ห้องน้ำ -->
+    <div style="padding:14px 0 4px;font-size:10px;letter-spacing:2px;color:var(--yellow);font-weight:700">STAIRCASE & FLOOR 3</div>
+    <div class="gal-row4">
+      <div class="gal-cell" onclick="openLB('https://i.ibb.co/TxLQDK7Z','บันไดขึ้นชั้น 2 พื้นหินอ่อน Type A')">
+        <img src="https://i.ibb.co/TxLQDK7Z" alt="บันได"><div class="gal-overlay"><div class="gal-cap">บันได ชั้น 1→2 หินอ่อน</div></div>
+      </div>
+      <div class="gal-cell" onclick="openLB('https://i.ibb.co/ymfP8dhv','ชานพักบันได ชั้น 1-2 หินอ่อน')">
+        <img src="https://i.ibb.co/ymfP8dhv" alt="ชานพัก"><div class="gal-overlay"><div class="gal-cap">ชานพักบันได — หินอ่อน</div></div>
+      </div>
+      <div class="gal-cell" onclick="openLB('https://i.ibb.co/KzrrDGQL','โถงชั้น 2 ฝั่งซ้าย แกรนิต')">
+        <img src="https://i.ibb.co/KzrrDGQL" alt="โถงชั้น 2"><div class="gal-overlay"><div class="gal-cap">โถงชั้น 2 ซ้าย — แกรนิต</div></div>
+      </div>
+      <div class="gal-cell" onclick="openLB('https://i.ibb.co/kVk2L3BZ','บันได ชั้น 2-3 แกรนิต')">
+        <img src="https://i.ibb.co/kVk2L3BZ" alt="บันได 2-3"><div class="gal-overlay"><div class="gal-cap">บันได ชั้น 2→3 แกรนิต</div></div>
+      </div>
+      <div class="gal-cell" onclick="openLB('https://i.ibb.co/204PP7Gj','โถงชั้น 3 Type A ด้านนอก')">
+        <img src="https://i.ibb.co/204PP7Gj" alt="ชั้น 3"><div class="gal-overlay"><div class="gal-cap">โถงชั้น 3 — Type A</div></div>
+      </div>
+    </div>
+
+    <div class="gal-row4" style="margin-top:4px">
+      <div class="gal-cell" onclick="openLB('https://i.ibb.co/Qjv2TFnR','บันไดขาลง แกรนิต')">
+        <img src="https://i.ibb.co/Qjv2TFnR" alt="บันไดลง"><div class="gal-overlay"><div class="gal-cap">บันไดขาลง — แกรนิต</div></div>
+      </div>
+      <div class="gal-cell" onclick="openLB('https://i.ibb.co/ns9YwSBL','โถงแกรนิตด้านนอก-หลัง')">
+        <img src="https://i.ibb.co/ns9YwSBL" alt="โถง"><div class="gal-overlay"><div class="gal-cap">โถงแกรนิตด้านหลัง</div></div>
+      </div>
+      <div class="gal-cell" onclick="openLB('https://i.ibb.co/BV6CYrN4','พื้นที่โถงชั้นล่างก่อนรื้อถอน')">
+        <img src="https://i.ibb.co/BV6CYrN4" alt="โถงชั้นล่าง"><div class="gal-overlay"><div class="gal-cap">โถงชั้นล่าง (ก่อนรื้อถอน)</div></div>
+      </div>
+      <div class="gal-cell" onclick="openLB('https://i.ibb.co/ksDC6Mxy','ห้องน้ำในอาคาร 1')">
+        <img src="https://i.ibb.co/ksDC6Mxy" alt="ห้องน้ำ"><div class="gal-overlay"><div class="gal-cap">ห้องน้ำภายใน (1)</div></div>
+      </div>
+      <div class="gal-cell" onclick="openLB('https://i.ibb.co/TxhdhGxs','ห้องน้ำในอาคาร 2')">
+        <img src="https://i.ibb.co/TxhdhGxs" alt="ห้องน้ำ"><div class="gal-overlay"><div class="gal-cap">ห้องน้ำภายใน (2)</div></div>
+      </div>
+    </div>
+
+    <!-- Bonus row -->
+    <div class="gal-row4" style="margin-top:4px">
+      <div class="gal-cell" onclick="openLB('https://i.ibb.co/MkhmkwVd','สาธิตการติดตั้งแอร์ตัวใหญ่')">
+        <img src="https://i.ibb.co/MkhmkwVd" alt="แอร์"><div class="gal-overlay"><div class="gal-cap">ติดตั้งแอร์ตัวใหญ่ได้</div></div>
+      </div>
+      <div class="gal-cell" onclick="openLB('https://i.ibb.co/39GGxbJs','ตัวอย่างติดป้ายขนาดใหญ่')">
+        <img src="https://i.ibb.co/39GGxbJs" alt="ป้าย"><div class="gal-overlay"><div class="gal-cap">ตัวอย่าง — ติดป้ายขนาดใหญ่</div></div>
+      </div>
+      <div class="gal-cell"></div>
+      <div class="gal-cell"></div>
+      <div class="gal-cell"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- VIDEO PLACEHOLDER -->
+<div class="video-section">
+  <div class="sec-tag c">VIDEO TOUR</div>
+  <h2 class="sec-title serif c">วิดีโอแนะนำโครงการ</h2>
+  <div class="video-box">
+    <div class="video-icon">🎬</div>
+    <div class="video-text">วิดีโอ Virtual Tour จะถูกเพิ่มในเร็วๆ นี้<br>ชมพื้นที่จริงทุกมุม ทุกชั้น แบบ 360°</div>
+    <div class="video-badge">COMING SOON</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div>
+      <div class="sec-tag">ทำเลกลยุทธ์</div>
+      <h2 class="sec-title serif">ทำเลทองฝั่งธนฯ<br>ชานเมืองที่มีทุกอย่าง</h2>
+      <p class="sec-sub">ย่านกาญจนาภิเษก-ปิ่นเกล้า ใกล้ถนนพระเทพตัดใหม่ ไม่แออัดเหมือนใจกลางเมือง แต่มีครบทุกสิ่งที่ธุรกิจต้องการ เข้าออกเมืองง่าย เชื่อมต่อทุกทิศ</p>
+      <div class="kpi-row">
+        <div class="kpi"><div class="kpi-num">5+</div><div class="kpi-label">ห้างสรรพสินค้าใน 15 นาที</div></div>
+        <div class="kpi"><div class="kpi-num">100+</div><div class="kpi-label">ที่จอดรถรวม</div></div>
+        <div class="kpi"><div class="kpi-num">10'</div><div class="kpi-label">ถึง MRT สายสีน้ำเงิน</div></div>
+        <div class="kpi"><div class="kpi-num">24/7</div><div class="kpi-label">รปภ. + กล้องวงจรปิด</div></div>
+      </div>
+    </div>
+    <div class="map-card">
+      <div class="map-card-head"><p>CONNECTIVITY MAP · THONBURI ZONE</p></div>
+      <div class="loc-grid">
+        <div class="loc-item"><div class="loc-icon">🛣️</div><div class="loc-title">กาญจนาภิเษก</div><div class="loc-desc">ออกเหนือ-ใต้-ออก ง่ายดาย</div></div>
+        <div class="loc-item"><div class="loc-icon">🏙️</div><div class="loc-title">ปิ่นเกล้า-พระราม 2</div><div class="loc-desc">เชื่อมต่อทุกทิศทาง</div></div>
+        <div class="loc-item"><div class="loc-icon">🚇</div><div class="loc-title">MRT สายสีน้ำเงิน</div><div class="loc-desc">ห่างเพียง 5-10 นาที</div></div>
+        <div class="loc-item"><div class="loc-icon">🛒</div><div class="loc-title">Central, The Mall, ซีคอน</div><div class="loc-desc">ห้างหลายแห่งในรัศมีใกล้</div></div>
+        <div class="loc-item"><div class="loc-icon">🍜</div><div class="loc-title">ตลาดธนบุรี & Paseo</div><div class="loc-desc">Avenue 2 แห่ง + อีก 2 เปิดใหม่</div></div>
+        <div class="loc-item"><div class="loc-icon">🏥</div><div class="loc-title">โรงพยาบาล & ยิม</div><div class="loc-desc">คอร์ทแบด สนามฟุตบอล</div></div>
+      </div>
+      <div class="loc-highlight">
+        <div class="lh-num">20'</div>
+        <div><div class="lh-text">เข้าใจกลางเมืองได้ใน 20 นาที</div><div class="lh-sub">ออกต่างจังหวัด-นนทบุรี-ปทุมก็แป๊บเดียว</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPES -->
+<section class="types" id="types">
+  <div class="types-inner">
+    <div class="sec-tag c">พื้นที่ให้เลือก</div>
+    <h2 class="sec-title serif c">อาคาร 2 Type<br>ยืดหยุ่น แบ่งโซนได้อิสระ</h2>
+    <div class="types-grid">
+      <div class="type-card">
+        <div class="type-label">TYPE A</div>
+        <div class="type-name serif">Compact Prime</div>
+        <div class="type-area-big">450 <span>ตร.ม.</span></div>
+        <div class="type-floor">150 ตร.ม./ชั้น × 3 ชั้น · เพดานสูง 5-6 ม.</div>
+        <ul class="type-list">
+          <li>ที่จอดรถส่วนตัว 6 คัน</li>
+          <li>พื้นแกรนิตและหินอ่อนทุกชั้น</li>
+          <li>ไฟฟ้า ประปา อินเทอร์เน็ต</li>
+          <li>แบ่ง Zone ได้อิสระทุกชั้น</li>
+          <li>ออกได้ 2 ฝั่งถนน (หน้า-หลัง)</li>
+        </ul>
+        <a href="#contact" class="type-cta">สอบถาม Type A</a>
+      </div>
+      <div class="type-card hot">
+        <div class="type-tag">LAST UNIT</div>
+        <div class="type-label">TYPE B</div>
+        <div class="type-name serif">Signature Prime</div>
+        <div class="type-area-big">900 <span>ตร.ม.</span></div>
+        <div class="type-floor">300 ตร.ม./ชั้น × 3 ชั้น · กระจกสูงทุกชั้น</div>
+        <ul class="type-list">
+          <li>ที่จอดรถส่วนตัวสูงสุด 10 คัน</li>
+          <li>ผนังกระจกสูงตลอดแนว</li>
+          <li>รองรับ Showroom / Studio / Clinic</li>
+          <li>ที่จอดรถส่วนกลาง 60-80 คัน</li>
+          <li>ติดถนนใหญ่ มองเห็นได้จากระยะไกล</li>
+        </ul>
+        <a href="#contact" class="type-cta">สอบถาม Type B</a>
+      </div>
+    </div>
+    <!-- Type Photos -->
+    <div class="type-photos" style="margin-top:28px">
+      <div class="type-photo-cell" onclick="openLB('https://i.ibb.co/vCjhZCVk','ด้านหน้า Type B')">
+        <img src="https://i.ibb.co/vCjhZCVk" alt="Type B หน้า">
+        <div class="type-photo-label">Type B — ด้านหน้า</div>
+      </div>
+      <div class="type-photo-cell" onclick="openLB('https://i.ibb.co/W4074ZCb','ด้านหน้า Type A ปัจจุบัน')">
+        <img src="https://i.ibb.co/W4074ZCb" alt="Type A">
+        <div class="type-photo-label">Type A — ปัจจุบัน</div>
+      </div>
+      <div class="type-photo-cell" onclick="openLB('https://i.ibb.co/G3QcTMvx','ภายใน มองเห็นถนนใหญ่')">
+        <img src="https://i.ibb.co/G3QcTMvx" alt="ภายใน">
+        <div class="type-photo-label">ภายใน — วิวถนนใหญ่</div>
+      </div>
+    </div>
+    <div class="price-note"><p>ราคาเริ่มต้น <span>90,000</span> บาท/เดือน · ปรับ Layout ได้ตามแนวคิดธุรกิจ</p></div>
+  </div>
+</section>
+
+<!-- LIFESTYLE -->
+<section class="lifestyle" id="lifestyle">
+  <div class="lifestyle-inner">
+    <div class="sec-tag">รอบข้างโครงการ</div>
+    <h2 class="sec-title serif">ทุกอย่างที่ต้องการ<br><span style="color:var(--yellow)">อยู่รอบตัวแล้ว</span></h2>
+    <p class="sec-sub" style="color:#9A8E7A">ลูกค้าและพนักงานสะดวกทุกวัน ทั้งอาหาร ช็อปปิ้ง ออกกำลังกาย และการเดินทางครบในรัศมีใกล้เคียง</p>
+    <div class="life-grid">
+      <div class="life-item"><div class="life-icon">🍜</div><div class="life-title">อาหารหลากหลาย</div><div class="life-desc">ตลาดธนบุรี, Paseo, Avenue ปั้มบรมราชชนนี 97 และอีก 2 Avenue ที่กำลังเปิดใหม่</div></div>
+      <div class="life-item"><div class="life-icon">🛒</div><div class="life-title">ห้างสรรพสินค้า</div><div class="life-desc">Central Eastview, The Walk, The Circle, The Mall บางแค, ซีคอนบางแค, Central ปิ่นเกล้า</div></div>
+      <div class="life-item"><div class="life-icon">🌊</div><div class="life-title">ตลาดน้ำวันหยุด</div><div class="life-desc">ตลาดน้ำคลองลัดมะยม เสาร์-อาทิตย์ ของกิน ของฝาก ขนมไทย บรรยากาศดี</div></div>
+      <div class="life-item"><div class="life-icon">💪</div><div class="life-title">ออกกำลังกาย</div><div class="life-desc">ยิม, คอร์ทแบดมินตัน, สนามฟุตบอล ใกล้เคียงทุกวัน</div></div>
+      <div class="life-item"><div class="life-icon">🚇</div><div class="life-title">การเดินทาง</div><div class="life-desc">MRT 5-10 นาที, ทางด่วน, กาญจนาภิเษก, เพชรเกษม, ราชพฤกษ์ ครบ</div></div>
+      <div class="life-item"><div class="life-icon">🏥</div><div class="life-title">สุขภาพ & บริการ</div><div class="life-desc">โรงพยาบาล, ปั้มน้ำมัน, โรงเรียนกวดวิชา ใกล้เคียงครบ</div></div>
+      <div class="life-item"><div class="life-icon">🔒</div><div class="life-title">ความปลอดภัย</div><div class="life-desc">กล้องวงจรปิดครอบคลุม รปภ. ตลอด 24 ชั่วโมง ไฟสปอตไลท์ทั่วพื้นที่</div></div>
+      <div class="life-item"><div class="life-icon">🛣️</div><div class="life-title">เชื่อมทุกเส้นทาง</div><div class="life-desc">กาญจนาภิเษก, พระราม 2, ราชพฤกษ์, ปิ่นเกล้า-นนทบุรี ครบในเส้นเดียว</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 TARGETS -->
+<section class="community" id="community">
+  <div class="community-inner">
+    <div class="sec-tag">ธุรกิจที่เหมาะกับพื้นที่นี้</div>
+    <h2 class="sec-title serif">7 กลุ่มธุรกิจที่พื้นที่นี้<br>พร้อมรองรับ</h2>
+    <p class="sec-sub">ทำเลศักยภาพสูง พร้อมรองรับธุรกิจที่ต้องการพื้นที่กว้างขวาง ยืดหยุ่น และ Brand Presence ชัดเจน</p>
+    <div class="biz-grid">
+      <div class="biz-card"><div class="biz-num">01</div><div class="biz-type">LANGUAGE EDUCATION</div><div class="biz-title">สถาบันสอนภาษานานาชาติ</div><div class="biz-desc">แบ่งโซน Group Class, Private Room, Activity Room สำหรับทุกภาษา ฝรั่งเศส อังกฤษ ญี่ปุ่น จีน รัสเซีย ทุกวัยเข้าถึง</div></div>
+      <div class="biz-card"><div class="biz-num">02</div><div class="biz-type">MUSIC ACADEMY</div><div class="biz-title">โรงเรียนดนตรีสากล</div><div class="biz-desc">Layout 3 ชั้น แบ่งห้องซ้อม ห้องเรียน Live Studio ได้อิสระ รองรับทุกเครื่องดนตรี กีตาร์ เปียโน ไวโอลิน ร้องเพลง วงดนตรี</div></div>
+      <div class="biz-card"><div class="biz-num">03</div><div class="biz-type">LEARNING SPACE</div><div class="biz-title">ศูนย์การเรียนรู้ & กวดวิชา</div><div class="biz-desc">ห้องเรียนหลายโซน Seminar Room สภาพแวดล้อมเอื้อต่อการเรียนรู้ พัฒนาทักษะชีวิต แสงสว่างเพียงพอ</div></div>
+      <div class="biz-card"><div class="biz-num">04</div><div class="biz-type">VETERINARY & PET CARE</div><div class="biz-title">โรงพยาบาลสัตว์ & Pet Care</div><div class="biz-desc">คลินิกรักษา Pet Shop ร้านอาหารสัตว์ Pet Hotel Grooming ครบวงจร ตอบเทรนด์ที่เติบโตต่อเนื่องในย่านอยู่อาศัยระดับดี</div></div>
+      <div class="biz-card"><div class="biz-num">05</div><div class="biz-type">TECHNOLOGY</div><div class="biz-title">ศูนย์เทคโนโลยี & Gadget</div><div class="biz-desc">Showroom ขนาดใหญ่ Demo Zone ให้ลูกค้าทดลองก่อนซื้อ ห้องสต็อก Studio Content รองรับ Franchise ได้ทันที</div></div>
+      <div class="biz-card"><div class="biz-num">06</div><div class="biz-type">FASHION & RETAIL</div><div class="biz-title">แฟชั่น Outlet & Brand Shop</div><div class="biz-desc">Shelf จัดแสดง ห้องลองชุด Live Commerce Studio Back Office โลจิสติกส์ ลด Friction ทุกขั้นตอน</div></div>
+      <div class="biz-card"><div class="biz-num">07</div><div class="biz-type">AESTHETICS & WELLNESS</div><div class="biz-title">คลินิกความงาม & Skincare</div><div class="biz-badge">HOT TREND</div><div class="biz-desc">Demand สูง ขยายสาขาตาม Brand Awareness ติดถนนใหญ่ Brand Presence ชัดเจน มีพื้นที่แสดง Skincare ครบในที่เดียว</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="sec-tag" style="color:var(--yellow)">ติดต่อ</div>
+      <h2 class="sec-title serif">พร้อมเริ่มต้น<br>บทใหม่ของธุรกิจ?</h2>
+      <p class="sec-sub">ทีมงานพร้อมพาชมพื้นที่จริง ให้คุณสัมผัสบรรยากาศและมองเห็นศักยภาพของทำเลนี้ด้วยตัวเอง</p>
+      <div class="c-details">
+        <div class="c-item"><div class="c-icon">📞</div><div><div class="c-label">โทรศัพท์</div><div class="c-val"><a href="tel:0846988881">084-6988881</a> (คุณนกยูง)</div></div></div>
+        <div class="c-item"><div class="c-icon">💬</div><div><div class="c-label">LINE OFFICIAL</div><div class="c-val"><a href="https://line.me/R/ti/p/@810ibeb" target="_blank">@810ibeb</a></div></div></div>
+        <div class="c-item"><div class="c-icon">📍</div><div><div class="c-label">ทำเล</div><div class="c-val">ฝั่งธนฯ ย่านกาญจนาภิเษก-ปิ่นเกล้า<br>ใกล้ถนนพระเทพตัดใหม่</div></div></div>
+        <div class="c-item"><div class="c-icon">💰</div><div><div class="c-label">ราคาเริ่มต้น</div><div class="c-val" style="font-family:'Playfair Display',serif;font-size:22px;color:var(--yellow)">90,000 <span style="font-size:13px;color:#9A8E7A;font-family:'Sarabun',sans-serif">บาท/เดือน</span></div></div></div>
+        <div class="c-item"><div class="c-icon">🕐</div><div><div class="c-label">เวลาทำการ</div><div class="c-val">จ–ศ 08:00–17:00 · ส–อา 10:00–17:00</div></div></div>
+      </div>
+    </div>
+    <div class="form-box">
+      <h3 class="serif">นัดชมสถานที่จริง</h3>
+      <div class="fg"><label>ชื่อ-นามสกุล</label><input type="text" placeholder="กรุณากรอกชื่อ"></div>
+      <div class="fg"><label>เบอร์โทรศัพท์</label><input type="tel" placeholder="08X-XXX-XXXX"></div>
+      <div class="fg"><label>ประเภทธุรกิจ</label>
+        <select>
+          <option value="">เลือกประเภทธุรกิจ</option>
+          <option>สถาบันสอนภาษานานาชาติ</option>
+          <option>โรงเรียนดนตรีสากล</option>
+          <option>ศูนย์การเรียนรู้ / กวดวิชา</option>
+          <option>โรงพยาบาลสัตว์ / Pet Care</option>
+          <option>ศูนย์เทคโนโลยี / Gadget</option>
+          <option>แฟชั่น Outlet / Brand Shop</option>
+          <option>คลินิกความงาม / Skincare</option>
+          <option>อื่นๆ</option>
+        </select>
+      </div>
+      <div class="fg"><label>Type ที่สนใจ</label>
+        <select>
+          <option value="">เลือก Type</option>
+          <option>Type A — 450 ตร.ม. (เริ่ม 90,000 บ.)</option>
+          <option>Type B — 900 ตร.ม.</option>
+          <option>ยังไม่แน่ใจ ขอคำแนะนำ</option>
+        </select>
+      </div>
+      <div class="fg"><label>ข้อความ</label><textarea placeholder="เล่าเกี่ยวกับธุรกิจของคุณ..."></textarea></div>
+      <button class="form-submit" onclick="alert('ขอบคุณครับ!\nทีมงานจะติดต่อกลับภายใน 24 ชั่วโมง\n📞 084-6988881 คุณนกยูง\n💬 LINE: @810ibeb')">ส่งข้อมูล — ติดต่อกลับใน 24 ชม.</button>
+      <div class="form-note">ข้อมูลของคุณถูกเก็บเป็นความลับ ไม่มีการเปิดเผยแก่บุคคลที่สาม</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="footer-logo">NOVA <span>LEARN</span> SPACE</div>
+    <span class="footer-sub">THE YELLOW OFFICIAL STATION · THONBURI, BANGKOK</span>
+  </div>
+  <div class="footer-info">
+    📞 084-6988881 (คุณนกยูง) · LINE: @810ibeb<br>
+    ราคาเริ่ม 90,000 บ./เดือน · พื้นที่ 450–900 ตร.ม.<br>
+    © 2025 Nova Learn Space. All Rights Reserved.
+  </div>
+</footer>
+
+<script>
+// ---- LIGHTBOX ----
+const allImgs = [];
+let currentIdx = 0;
+
+function openLB(src, cap) {
+  document.getElementById('lb-img').src = src;
+  document.getElementById('lb-caption').textContent = cap || '';
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  // build index
+  const cells = document.querySelectorAll('[onclick^="openLB"]');
+  allImgs.length = 0;
+  cells.forEach((el,i) => {
+    const m = el.getAttribute('onclick').match(/openLB\('([^']+)','([^']*)'\)/);
+    if(m) allImgs.push({src:m[1],cap:m[2]});
+    if(m && m[1] === src) currentIdx = i;
+  });
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeLB(e) { if(e.target.id==='lightbox') closeLightbox(); }
+function lbNav(dir) {
+  currentIdx = (currentIdx + dir + allImgs.length) % allImgs.length;
+  document.getElementById('lb-img').src = allImgs[currentIdx].src;
+  document.getElementById('lb-caption').textContent = allImgs[currentIdx].cap;
+}
+document.addEventListener('keydown', e => {
+  if(e.key==='Escape') closeLightbox();
+  if(e.key==='ArrowRight') lbNav(1);
+  if(e.key==='ArrowLeft') lbNav(-1);
+});
+</script>
+</body>
+</html>
